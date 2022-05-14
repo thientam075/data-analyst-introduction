@@ -2,8 +2,7 @@ import styles from "./home.module.css";
 const Header = () => {
   return (
     <>
-   
-      <header className={`${styles[`masthead`]}`} id = 'header'>
+      <header className={`${styles[`masthead`]}`} id="header">
         <div className={`${styles[`container`]}`}>
           <div className={`${styles[`masthead-heading`]}`}>
             Welcome to Data Analyst
@@ -12,20 +11,21 @@ const Header = () => {
             className={`${styles[`masthead-subheading`]} ${
               styles[`text-capitalize`]
             }`}
-          style={{lineHeight: 'normal'}}
+            style={{ lineHeight: "normal" }}
           >
-            Data Analyst is a modern data exploration <br/ >and visualization platform
+            Data Analyst is a modern data exploration <br />
+            and visualization platform
           </div>
           <a
-            className={`${styles[`btn`]} ${styles[`btn-secondary`]} ${
+            className={`${styles[`btn`]} ${styles[`btn-danger`]} ${
               styles[`btn-lg`]
             } ${styles[`text-capitalize`]}`}
-            href="#services"
+            href="#pricing"
           >
             Get Started
           </a>
         </div>
-      </header> 
+      </header>
     </>
   );
 };

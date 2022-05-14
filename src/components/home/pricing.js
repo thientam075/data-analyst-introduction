@@ -1,82 +1,105 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import Container from '@mui/material/Container';
-
-
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardHeader from "@mui/material/CardHeader";
+import CssBaseline from "@mui/material/CssBaseline";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import Container from "@mui/material/Container";
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
+    title: "Free Trial",
+    subheader: "For Analytics Beginners",
+    price: "0",
     description: [
-      '10 users included',
-      '2 GB of storage',
-      'Help center access',
-      'Email support',
+      "1 users included",
+      "1 connected to database",
+      "3-4 report can be created",
+      "Unlimit dataset can be created",
     ],
-    buttonText: 'Sign up for free',
-    buttonVariant: 'outlined',
+    buttonText: "Sign up for free",
+    buttonVariant: "outlined",
   },
   {
-    title: 'Pro',
-    subheader: 'Most popular',
-    price: '15',
+    title: "Entry",
+    subheader: "Recommend",
+    price: "100",
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
+      "20 users included",
+      "4-5 connected to database",
+      "50 report can be created",
+      "Unlimit dataset can be created",
     ],
-    buttonText: 'Get started',
-    buttonVariant: 'contained',
+    buttonText: "Get started",
+    buttonVariant: "contained",
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: "Standard",
+    subheader: "For huge Analyst team",
+    price: "250",
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      "50 users included",
+      "15-20 connected to database",
+      "150 report can be created",
+      "Unlimit dataset can be created",
     ],
-    buttonText: 'Contact us',
-    buttonVariant: 'outlined',
+    buttonText: "Contact us",
+    buttonVariant: "outlined",
   },
 ];
 
 const Pricing = () => {
   return (
     <React.Fragment>
-      <GlobalStyles styles={{ ul: { margin: 0, padding: 0, listStyle: 'none' } }} />
+      <GlobalStyles
+        styles={{ ul: { margin: 0, padding: 0, listStyle: "none" } }}
+      />
       <CssBaseline />
       {/* Hero unit */}
-      <Container disableGutters maxWidth="sm" component="main" id = 'pricing' sx={{ pt: 8, pb: 6}}>
+      <Container
+        disableGutters
+        maxWidth="md"
+        component="main"
+        id="pricing"
+        sx={{ pt: 8, pb: 6 }}
+      >
         <Typography
-          component="h1"
-          variant="h2"
+          component="h3"
+          variant="h3"
           align="center"
           color="text.primary"
           gutterBottom
         >
           Pricing
         </Typography>
-        <Typography variant="h5" align="center" color="text.secondary" component="p">
-          There are 3 option for using our services: <br/>
-          You can test with a little dataset and report free. <br/>
-          If you work with small team, you ..........
+        <Typography
+          variant="h6"
+          align="center"
+          color="text.secondary"
+          component="p"
+        >
+          There are three great value options which allow increase limit of
+          report and member of your team.<br/> Usage-based pricing mechanism. All
+          plans start with a 14-day trial with unlimited functionalities. No
+          credit card details required. Change your plan at any time.
+        </Typography>
+        <Typography
+          variant="h5"
+          align="center"
+          color="text.secondary"
+          component="p"
+          sx={{ fontWeight: 600 }}
+        >
+          There are three monthly subscriptions available:
         </Typography>
       </Container>
       {/* End hero unit */}
-      <Container maxWidth="md" component="main" sx = {{ mb: 6 }}>
+      <Container maxWidth="md" component="main" sx={{ mb: 6 }}>
         <Grid container spacing={5} alignItems="flex-end">
           {tiers.map((tier) => (
             // Enterprise card is full width at sm breakpoint
@@ -84,20 +107,20 @@ const Pricing = () => {
               item
               key={tier.title}
               xs={12}
-              sm={tier.title === 'Enterprise' ? 12 : 6}
+              sm={tier.title === "Enterprise" ? 12 : 6}
               md={4}
             >
               <Card>
                 <CardHeader
                   title={tier.title}
                   subheader={tier.subheader}
-                  titleTypographyProps={{ align: 'center' }}
+                  titleTypographyProps={{ align: "center" }}
                   subheaderTypographyProps={{
-                    align: 'center',
+                    align: "center",
                   }}
                   sx={{
                     backgroundColor: (theme) =>
-                      theme.palette.mode === 'light'
+                      theme.palette.mode === "light"
                         ? theme.palette.grey[200]
                         : theme.palette.grey[700],
                   }}
@@ -105,17 +128,21 @@ const Pricing = () => {
                 <CardContent>
                   <Box
                     sx={{
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'baseline',
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "baseline",
                       mb: 2,
                     }}
                   >
-                    <Typography component="h2" variant="h3" color="text.primary">
+                    <Typography
+                      component="h2"
+                      variant="h3"
+                      color="text.primary"
+                    >
                       ${tier.price}
                     </Typography>
                     <Typography variant="h6" color="text.secondary">
-                      /mo
+                      /month
                     </Typography>
                   </Box>
                   <ul>
@@ -123,7 +150,7 @@ const Pricing = () => {
                       <Typography
                         component="li"
                         variant="subtitle1"
-                        align="center"
+                        align="left"
                         key={line}
                       >
                         {line}
@@ -143,6 +170,6 @@ const Pricing = () => {
       </Container>
     </React.Fragment>
   );
-}
+};
 
 export default Pricing;
